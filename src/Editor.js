@@ -2,19 +2,28 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Editor.css';
 // MD insctructions
-import { sampleText } from './sampleText';
+import { mdExample } from './mdExample';
 // Marked.js
 import marked from 'marked';
 
 class App extends Component {
 
   state = {
-    text: sampleText
+    mdExample: mdExample
   }
 
   editText = (event) => {
-    const text = event.target.value;
-    this.setState({ text: text });
+    const mdExample = event.target.value;
+    this.setState({ mdExample });
+  }
+
+  mdRender = (text) => {
+    const mdRender = marked(text, {sanitaze: true});
+    return { __html: mdRender }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('mdExample', nextState.mdExample)
   }
 
   render() {
@@ -28,13 +37,14 @@ class App extends Component {
                 <h2 className="text-center">Write in markdown here</h2>
                 <textarea
                 className="form-control"
-                value={ this.state.text }
+                value={ this.state.mdExample }
                 rows="35"
                 onChange={(e) => this.editText(e)}>
                 </textarea>
               </div>
               <div className="col-md-6">
                 <h2 className="text-center">Live preview</h2>
+                <div dangerouslySetInnerHTML = { this.mdRender(this.state.mdExample) } />
               </div>
             </div>
           </div>
