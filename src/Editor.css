@@ -1,3 +1,10 @@
 .editor {
-    
+
+}
+.form-control {
+    border-radius: 20px;
+}
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px #00000030;  
 }
