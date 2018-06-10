@@ -10,21 +10,28 @@ class App extends Component {
 
   state = {
     mdExample: mdExample
-  }
+  };
+
+  componentWillMount() {
+    const localStorageEditor = localStorage.getItem('mdExample');
+    if (localStorageEditor) {
+      this.setState({ mdExample: localStorageEditor });
+    }
+  };
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('mdExample', nextState.mdExample);
+  };
 
   editText = (event) => {
     const mdExample = event.target.value;
     this.setState({ mdExample });
-  }
+  };
 
   mdRender = (text) => {
     const mdRender = marked(text, {sanitaze: true});
     return { __html: mdRender }
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('mdExample', nextState.mdExample)
-  }
+  };
 
   render() {
     return (
