@@ -1,4 +1,4 @@
-#jdmarkdown
+# jdmarkdown
 
 ![alt text](http://jensone.com/JDMd-small.png "Logo JDMarkdown")
 
@@ -7,7 +7,7 @@ Testez le via le lien suivant [JDMarkdown](#)
 
 ---
 
-###Installation :
+### Installation :
 
 + Télécharger le projet
 + Dézipper l'archive dans votre espace de développement préféré
