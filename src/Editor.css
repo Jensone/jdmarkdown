@@ -1,10 +1,12 @@
-.editor {
-
-}
-.form-control {
+.form-control, .infomaniak {
     border-radius: 20px;
 }
 .card {
+    margin: 25px 0px;
     border-radius: 20px;
     box-shadow: 0px 0px 30px #00000030;  
+}
+
+footer {
+    padding: 25px 0px;
 }
