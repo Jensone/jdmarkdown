@@ -3,7 +3,7 @@
 ![alt text](http://jensone.com/JDMd-small.png "Logo JDMarkdown")
 
 JDMarkdown est un editeur en live de Markdown.
-Testez le via le lien suivant [JDMarkdown](#)
+Testez le via le lien suivant [JDMarkdown](http://bit.ly/JDMarkdown)
 
 ---
 
